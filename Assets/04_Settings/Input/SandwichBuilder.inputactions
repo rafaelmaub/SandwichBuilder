@@ -1,0 +1,66 @@
+{
+    "name": "SandwichBuilder",
+    "maps": [
+        {
+            "name": "Gameplay",
+            "id": "513241aa-ba0e-4255-816a-746e6dbb95a5",
+            "actions": [
+                {
+                    "name": "AimPosition",
+                    "type": "Value",
+                    "id": "743f3019-491d-4384-8d3d-21aea7fb38b6",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "DragDrop",
+                    "type": "Button",
+                    "id": "144f3ad7-924c-4885-84b6-36103382480c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d111e9a4-c8bc-4b59-be77-fd1d1109510e",
+                    "path": "<Pointer>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse",
+                    "action": "AimPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "172839e8-0e0f-47e9-89fe-3fb42629b6fa",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse",
+                    "action": "DragDrop",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Mouse",
+            "bindingGroup": "Mouse",
+            "devices": [
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
