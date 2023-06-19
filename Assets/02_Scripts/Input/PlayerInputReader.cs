@@ -34,10 +34,24 @@ public class PlayerInputReader : MonoBehaviour
     private void DragDrop_canceled(InputAction.CallbackContext obj)
     {
         //_picker.StartPickIngredient();
-        //CHECK IF THERE IS BOARD
-        //IF THERE IS BOARD, SEND TO PICKER
-        //IF NOT
-        _picker.DropIngredient();
+
+        RaycastHit hit;
+        Ray ray = _playerCam.ScreenPointToRay(_aimPos);
+        if (Physics.Raycast(ray, out hit, 1000f))
+        {
+            Debug.Log(hit.collider.name);
+            SandwichBoard board = hit.collider.GetComponent<SandwichBoard>();
+            if (board)
+            {
+                _picker.PlaceOnBoard(board);
+            }
+            else
+            {
+                _picker.DropIngredient();
+            }
+
+        }
+
     }
 
     private void DragDrop_performed(InputAction.CallbackContext obj)

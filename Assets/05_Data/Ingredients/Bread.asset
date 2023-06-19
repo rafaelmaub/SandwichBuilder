@@ -17,4 +17,4 @@ MonoBehaviour:
   _icon: {fileID: 0}
   _prefabMesh: {fileID: 2070109798442160393, guid: 77323bb0c3388ab448bb1e256a42a2ad,
     type: 3}
-  _spawnParticleEffect: {fileID: 0}
+  _type: 1

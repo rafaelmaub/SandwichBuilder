@@ -49,6 +49,17 @@ public class IngredientPicker : MonoBehaviour
         if(_currentIngredient)
         {
             _currentIngredient.Drop();
+            _currentIngredient = null;
         }
+    }
+
+    public void PlaceOnBoard(SandwichBoard board)
+    {
+        if(_currentIngredient)
+        {
+            board.PlaceIngredient(_currentIngredient);
+            _currentIngredient = null;
+        }
+        
     }
 }

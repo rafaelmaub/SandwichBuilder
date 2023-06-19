@@ -1,22 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class SandwichBoard : MonoBehaviour
 {
     [SerializeField] private List<Ingredient> _currentSandwich = new List<Ingredient>();
-
-    public void AddIngredient(IngredientObject ing)
+    
+    public void PlaceIngredient(IngredientObject ing)
     {
-        if(_currentSandwich.Count == 0 && ing.Ingredient._type != IngredientType.Bread)
+        if (_currentSandwich.Count == 0 && ing.Ingredient._type != IngredientType.Bread)
         {
-            //Ignore
+            ing.Drop();
             return;
         }
 
-        _currentSandwich.Add(ing.Ingredient);
+        ing.transform.DOMove(transform.position + (Vector3.up * 0.4f), 0.12f).OnComplete(() =>
+        {
+            ing.RigidBody.isKinematic = false;
+        });
+
+        AddIngredient(ing.Ingredient);
+    }
+    public void AddIngredient(Ingredient ing)
+    {
+
+
+        _currentSandwich.Add(ing);
         //Instantiate ingredient above
-        if (_currentSandwich.Count > 1 && ing.Ingredient._type == IngredientType.Bread)
+        if (_currentSandwich.Count > 1 && ing._type == IngredientType.Bread)
         {
             //Finish sandwich
         }
