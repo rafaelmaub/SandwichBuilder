@@ -6,7 +6,9 @@ using DG.Tweening;
 public class SandwichBoard : MonoBehaviour
 {
     [SerializeField] private List<Ingredient> _currentSandwich = new List<Ingredient>();
-    
+    [SerializeField] private Transform _deliveryPoint;
+    [SerializeField] private Transform _trashPoint;
+    private GameObject _sandwichParent;
     public void PlaceIngredient(IngredientObject ing)
     {
         if (_currentSandwich.Count == 0 && ing.Ingredient._type != IngredientType.Bread)
@@ -20,20 +22,33 @@ public class SandwichBoard : MonoBehaviour
             ing.RigidBody.isKinematic = false;
         });
 
+        if (_sandwichParent == null)
+        {
+            _sandwichParent = new GameObject("Sandwich");
+            _sandwichParent.transform.SetParent(transform);
+            _sandwichParent.transform.position = Vector3.zero;
+        }
+
+        ing.transform.SetParent(_sandwichParent.transform);
         AddIngredient(ing.Ingredient);
     }
     public void AddIngredient(Ingredient ing)
     {
-
-
         _currentSandwich.Add(ing);
         //Instantiate ingredient above
         if (_currentSandwich.Count > 1 && ing._type == IngredientType.Bread)
         {
-            //Finish sandwich
+            FinishSandwich();
         }
+    }
 
-
-
+    void FinishSandwich()
+    {
+        //check if its correct or not
+        _sandwichParent.transform.DOMove(_deliveryPoint.position, 1f).SetDelay(0.15f).SetEase(Ease.InOutElastic).OnComplete(() =>
+        {
+            Destroy(_sandwichParent);
+            _currentSandwich.Clear();
+        });
     }
 }

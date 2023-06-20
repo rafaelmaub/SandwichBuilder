@@ -7,7 +7,7 @@ public class Ingredient : ScriptableObject
 {
     public string _name;
     public string _description;
-    public UnityEngine.UI.Image _icon;
+    public Sprite _icon;
     public IngredientObject _prefabMesh;
     public IngredientType _type;
 }
