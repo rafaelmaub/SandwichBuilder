@@ -47,9 +47,9 @@ public class SandwichBoard : MonoBehaviour
         //check if its correct or not
         Transform target = _deliveryPoint;
         float score = GameController.Instance.ScoreSuccess;
-        bool success = GameController.Instance.IsSandwichCorrect(_currentSandwich);
+        SandwichOrder success = GameController.Instance.IsSandwichCorrect(_currentSandwich);
 
-        if (!success)
+        if (success == null)
         {
             target = _trashPoint;
             score = GameController.Instance.ScoreFail;
@@ -58,12 +58,12 @@ public class SandwichBoard : MonoBehaviour
 
         _sandwichParent.transform.DOMove(target.position, 1f).SetDelay(0.15f).SetEase(Ease.InOutElastic).OnComplete(() =>
         {
-            Destroy(_sandwichParent);
-            _currentSandwich.Clear();
-            if(success)
+            if(success != null)
             {
-                GameController.Instance.SandwichRequester.NewRequest();
+                GameController.Instance.CompleteOrder(success);
             }
+            _currentSandwich.Clear();
+            Destroy(_sandwichParent, 0.1f);
         });
     }
 }

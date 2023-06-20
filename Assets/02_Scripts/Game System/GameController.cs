@@ -14,30 +14,49 @@ public class GameController : Singleton<GameController>
     public float ScoreSuccess => _pointsForCorrect;
     public float ScoreFail => _pointsForError;
 
-    public bool IsSandwichCorrect(List<Ingredient> ingredients)
+    private void Start()
     {
-        bool bCorrect = true;
+        UIController.Instance.Countdown.StartCountdown();
+    }
 
-        if (SandwichRequester.CurrentSandwich._ingredients.Count != ingredients.Count)
-            bCorrect = false;
-
-        foreach(Ingredient ing in ingredients)
+    public SandwichOrder IsSandwichCorrect(List<Ingredient> ingredients)
+    {
+        foreach(SandwichOrder order in SandwichRequester.Orders)
         {
-            if(!SandwichRequester.CurrentSandwich._ingredients.Contains(ing))
-            {
+            bool bCorrect = true;
+
+            if (order._sandwich._ingredients.Count != ingredients.Count)
                 bCorrect = false;
+
+            foreach (Ingredient ing in ingredients)
+            {
+                if (!order._sandwich._ingredients.Contains(ing))
+                {
+                    bCorrect = false;
+                }
             }
+
+            foreach (Ingredient ing in order._sandwich._ingredients)
+            {
+                if (!ingredients.Contains(ing))
+                {
+                    bCorrect = false;
+                }
+            }
+
+            if(bCorrect)
+                return order;
         }
 
-        foreach (Ingredient ing in SandwichRequester.CurrentSandwich._ingredients)
-        {
-            if (!ingredients.Contains(ing))
-            {
-                bCorrect = false;
-            }
-        }
+        return null;
 
-        return bCorrect;
 
+    }
+
+    public void CompleteOrder(SandwichOrder _order)
+    {
+        //give rewards
+        _order.Finish(true);
+        
     }
 }
