@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Onion
   _description: '"Look at little sandwich maker Jr. Gonna cry?"'
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300052, guid: 37607ec1aab56e349af84a980f685a4b, type: 3}
   _prefabMesh: {fileID: 3974537636003444900, guid: 79da792b6af6694488ea5c62b77f54a3,
     type: 3}
-  _spawnParticleEffect: {fileID: 0}
+  _type: 0

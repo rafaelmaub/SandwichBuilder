@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Bread
   _description: How can some people eat it with crust?
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300094, guid: 37607ec1aab56e349af84a980f685a4b, type: 3}
   _prefabMesh: {fileID: 2070109798442160393, guid: 77323bb0c3388ab448bb1e256a42a2ad,
     type: 3}
   _type: 1
