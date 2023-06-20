@@ -9,6 +9,11 @@ public class SandwichBoard : MonoBehaviour
     [SerializeField] private Transform _deliveryPoint;
     [SerializeField] private Transform _trashPoint;
     private GameObject _sandwichParent;
+
+    private void Start()
+    {
+        GameController.Instance.SandwichRequester.OnMatchEnded.AddListener(FinishSandwich);
+    }
     public void PlaceIngredient(IngredientObject ing)
     {
         if (_currentSandwich.Count == 0 && ing.Ingredient._type != IngredientType.Bread)

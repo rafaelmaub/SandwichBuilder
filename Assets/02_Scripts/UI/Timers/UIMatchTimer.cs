@@ -8,12 +8,16 @@ public class UIMatchTimer : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _timerText;
 
+    private void Start()
+    {
+        GameController.Instance.SandwichRequester.OnTimeElapsed.AddListener(UpdateTimer);
+    }
     private void OnEnable()
     {
         _timerText.color = Color.white;
 
     }
-    void UpdateTimer(float secondsRemaining)
+    public void UpdateTimer(float secondsRemaining)
     {
         TimeSpan formatedTime = new TimeSpan(0, 0, (int)secondsRemaining);
         _timerText.text = formatedTime.ToString(@"mm\:ss");

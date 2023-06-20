@@ -30,7 +30,8 @@ public class IngredientPicker : MonoBehaviour
     public void StartPickIngredient(IngredientPlate plate)
     {
         _currentIngredient = plate.GetIngredient();
-        _currentIngredient.transform.position += new Vector3(0, _followHeight, 0);
+        if(_currentIngredient)
+            _currentIngredient.transform.position += new Vector3(0, _followHeight, 0);
         //_minHeight = _currentIngredient.transform.position.y;
         
     }

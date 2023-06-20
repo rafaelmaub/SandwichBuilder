@@ -12,6 +12,8 @@ public class SandwichRequester : MonoBehaviour
     [SerializeField] private float _matchTime = 120;
 
     [HideInInspector] public UnityEvent<SandwichOrder> OnNewSandwich = new UnityEvent<SandwichOrder>();
+    [HideInInspector] public UnityEvent<float> OnTimeElapsed = new UnityEvent<float>();
+    [HideInInspector] public UnityEvent OnMatchEnded = new UnityEvent();
 
     public List<SandwichOrder> Orders => _orders;
     float _matchTimer;
@@ -23,7 +25,9 @@ public class SandwichRequester : MonoBehaviour
     }
     public void StartRequesting()
     {
+        _matchTimer = 0;
         _running = true;
+        
         NewRequest();
 
         //hide menu
@@ -39,6 +43,7 @@ public class SandwichRequester : MonoBehaviour
             {
                 StopRequesting();
             }
+            OnTimeElapsed.Invoke(_matchTime - _matchTimer);
         }
 
         if(false) //IF TIMED MODE
@@ -64,6 +69,13 @@ public class SandwichRequester : MonoBehaviour
     {
         _running = false;
 
+        foreach(SandwichOrder order in _orders)
+        {
+            order.Finish(false);
+        }
+
+        UIController.Instance.ShowResults();
+        OnMatchEnded.Invoke();
         //show menu
         //stop timer
     }

@@ -31,7 +31,7 @@ public class UICountdown : MonoBehaviour
             {
                 _currentTimer -= Time.deltaTime;
 
-                UpdateTimerText((int)_currentTimer);
+                UpdateTimerText(Mathf.RoundToInt(_currentTimer));
             }
             else
             {
@@ -43,9 +43,9 @@ public class UICountdown : MonoBehaviour
 
     void UpdateTimerText(int second)
     {
-        if(second < _currentCountdownSecond)
+        if(second != _currentCountdownSecond)
         {
-            _countDownText.text = second.ToString();
+            _countDownText.text = (second + 1).ToString();
             _currentCountdownSecond = second;
             PopEffectTimerText();
         }

@@ -11,7 +11,7 @@ public class IngredientPlate : MonoBehaviour
     [SerializeField] private Ingredient _ingredient;
 
     IngredientObject IngredientObj => _ingredient._prefabMesh;
-
+    public bool _enabled;
     private void Awake()
     {
         StartCoroutine(BuildTowerOfIngredients());
@@ -33,7 +33,10 @@ public class IngredientPlate : MonoBehaviour
 
     public IngredientObject GetIngredient()
     {
-        return Instantiate(IngredientObj, transform.position, IngredientObj.transform.rotation);
+        if(_enabled)
+            return Instantiate(IngredientObj, transform.position, IngredientObj.transform.rotation);
+        else
+            return null;
     }
 
 
