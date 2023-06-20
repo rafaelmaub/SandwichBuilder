@@ -40,10 +40,13 @@ public class UISandwichRequest : MonoBehaviour
 
     void FinishOrder(bool win)
     {
-        Debug.Log("Order Finished");
-        GameController.Instance.SandwichRequester.NewRequest();
+        if (win && !GameController.Instance._speedUp) //if game is still running
+        {
+            GameController.Instance.SandwichRequester.NewRequest();
+            
+        }
+
         ((RectTransform)transform.GetChild(0)).DOAnchorPos(new Vector2(0, 400), 0.4f).OnComplete(() => Destroy(gameObject));
-        
     }
     
 }

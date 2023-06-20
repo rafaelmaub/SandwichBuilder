@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-
+using System.Linq;
 public class SandwichRequester : MonoBehaviour
 {
     
@@ -15,9 +15,9 @@ public class SandwichRequester : MonoBehaviour
     [HideInInspector] public UnityEvent<float> OnTimeElapsed = new UnityEvent<float>();
     [HideInInspector] public UnityEvent OnMatchEnded = new UnityEvent();
 
-    public List<SandwichOrder> Orders => _orders;
+    public List<SandwichOrder> Orders => _orders.Where(x => x._running).ToList();
     float _matchTimer;
-    bool _running;
+    public bool _running { get; private set; }
 
     private void Start()
     {
@@ -27,11 +27,8 @@ public class SandwichRequester : MonoBehaviour
     {
         _matchTimer = 0;
         _running = true;
-        
+        _orders = new List<SandwichOrder>();
         NewRequest();
-
-        //hide menu
-        //start countdown
     }
 
     private void Update()
@@ -39,16 +36,17 @@ public class SandwichRequester : MonoBehaviour
         if(_running)
         {
             _matchTimer += Time.deltaTime;
+            OnTimeElapsed.Invoke(_matchTime - _matchTimer);
+
             if (_matchTimer >= _matchTime)
             {
                 StopRequesting();
             }
-            OnTimeElapsed.Invoke(_matchTime - _matchTimer);
         }
 
-        if(false) //IF TIMED MODE
+        if(GameController.Instance._speedUp)
         {
-            foreach (SandwichOrder order in _orders)
+            foreach (SandwichOrder order in Orders)
             {
                 order.EvaluateTime();
             }
@@ -67,9 +65,10 @@ public class SandwichRequester : MonoBehaviour
     }
     public void StopRequesting()
     {
+        
         _running = false;
 
-        foreach(SandwichOrder order in _orders)
+        foreach(SandwichOrder order in Orders)
         {
             order.Finish(false);
         }
@@ -82,20 +81,12 @@ public class SandwichRequester : MonoBehaviour
 
     void ClearList(bool finished)
     {
-        List<SandwichOrder> toRemove = new List<SandwichOrder>();
-
-        foreach(SandwichOrder order in _orders)
-        {
-            if(!order._running)
-            {
-                toRemove.Add(order);
-            }
-        }
-
-        foreach(SandwichOrder r in toRemove)
-        {
-            Orders.Remove(r);
-        }
+        //List<SandwichOrder> toRemove = new List<SandwichOrder>();
+        //foreach(SandwichOrder _oldOrder in Orders.Where(x => !x._running))
+        //{
+        //    Orders.Remove(_oldOrder);
+        //}
+        
     }
 }
 
@@ -106,7 +97,9 @@ public class SandwichOrder
     public float _time;
     public bool _running { get; private set; }
     private float _currentTimer;
+
     public UnityEvent<bool> OnOrderFinished = new UnityEvent<bool>();
+
     public void Finish(bool win)
     {
         _running = false;
@@ -115,12 +108,16 @@ public class SandwichOrder
     }
     public void EvaluateTime()
     {
-        _currentTimer += Time.deltaTime;
-        if(_currentTimer >= _time)
+        if(_running)
         {
-            _running = false;
-            Finish(false);
+            _currentTimer += Time.deltaTime;
+            if (_currentTimer >= _time)
+            {
+                GameController.Instance.ScoreSystem.ChangeCurrentScore(GameController.Instance.ScoreLostOrder);
+                Finish(false);
+            }
         }
+
     }
 
     public SandwichOrder(Sandwich sand, float time)

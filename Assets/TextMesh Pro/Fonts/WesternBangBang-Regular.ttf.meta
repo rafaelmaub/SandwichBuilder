@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b48e1fcfe40925e459f0bc264550e982
+guid: ca6dee5e8177f1e43a5fb71549e9dbc8
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - SMASH
+  - Western Bang Bang
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

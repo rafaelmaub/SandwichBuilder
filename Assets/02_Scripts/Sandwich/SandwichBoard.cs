@@ -51,24 +51,29 @@ public class SandwichBoard : MonoBehaviour
     {
         //check if its correct or not
         Transform target = _deliveryPoint;
-        float score = GameController.Instance.ScoreSuccess;
         SandwichOrder success = GameController.Instance.IsSandwichCorrect(_currentSandwich);
 
         if (success == null)
         {
             target = _trashPoint;
-            score = GameController.Instance.ScoreFail;
-
         }
+        _currentSandwich.Clear();
 
-        _sandwichParent.transform.DOMove(target.position, 1f).SetDelay(0.15f).SetEase(Ease.InOutElastic).OnComplete(() =>
+        if (!_sandwichParent)
+        {
+            return;
+        }
+        GameObject copy = _sandwichParent;
+        _sandwichParent = null;
+
+        copy.transform.DOMove(target.position, 1f).SetDelay(0.15f).SetEase(Ease.InOutElastic).OnComplete(() =>
         {
             if(success != null)
             {
                 GameController.Instance.CompleteOrder(success);
             }
-            _currentSandwich.Clear();
-            Destroy(_sandwichParent, 0.1f);
+            
+            Destroy(copy);
         });
     }
 }
