@@ -7,6 +7,6 @@ public class Sandwich : ScriptableObject
 {
     public bool _RANDOM;
     public string _name;
-    public float _time;
-    public Ingredient[] _ingredients;
+    public List<Ingredient> _ingredients = new List<Ingredient>();
+
 }

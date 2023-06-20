@@ -39,7 +39,7 @@ public class PlayerInputReader : MonoBehaviour
         Ray ray = _playerCam.ScreenPointToRay(_aimPos);
         if (Physics.Raycast(ray, out hit, 1000f))
         {
-            Debug.Log(hit.collider.name);
+            //Debug.Log(hit.collider.name);
             SandwichBoard board = hit.collider.GetComponent<SandwichBoard>();
             if (board)
             {
