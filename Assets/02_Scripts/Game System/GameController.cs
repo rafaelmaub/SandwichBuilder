@@ -17,9 +17,9 @@ public class GameController : Singleton<GameController>
     [SerializeField] private float _multiplierSpeedUp;
     public SandwichRequester SandwichRequester => _sandwichRequester;
     public GameScore ScoreSystem => _scoreSystem;
-    public float ScoreSuccess => _pointsForCorrectSandwich;
-    public float ScoreFail => _pointsForWrongSandwich;
-    public float ScoreLostOrder => _pointsForFailingOrder;
+    public float ScoreSuccess => _speedUp ? _pointsForCorrectSandwich * _multiplierSpeedUp : _pointsForCorrectSandwich;
+    public float ScoreFail => _speedUp ? _pointsForWrongSandwich * _multiplierSpeedUp : _pointsForWrongSandwich;
+    public float ScoreLostOrder => _speedUp ? _pointsForFailingOrder * _multiplierSpeedUp : _pointsForFailingOrder;
 
     public bool MatchRunning => SandwichRequester._running;
     private void Start()
@@ -59,18 +59,18 @@ public class GameController : Singleton<GameController>
         {
             bool bCorrect = true;
 
-            if (order._sandwich._ingredients.Count != ingredients.Count)
+            if (order.Ingredients.Count != ingredients.Count)
                 bCorrect = false;
 
             foreach (Ingredient ing in ingredients)
             {
-                if (!order._sandwich._ingredients.Contains(ing))
+                if (!order.Ingredients.Contains(ing))
                 {
                     bCorrect = false;
                 }
             }
 
-            foreach (Ingredient ing in order._sandwich._ingredients)
+            foreach (Ingredient ing in order.Ingredients)
             {
                 if (!ingredients.Contains(ing))
                 {

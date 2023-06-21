@@ -21,7 +21,6 @@ public class Button3D : MouseHoverExtension
     protected override void MouseStartedHover()
     {
         base.MouseStartedHover();
-        Debug.Log("TESTE");
         _word.GlowUp();
     }
     protected override void MouseStoppedHover()

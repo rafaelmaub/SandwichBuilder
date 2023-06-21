@@ -6,7 +6,7 @@ using TMPro;
 
 public class UIMatchTimer : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _timerText;
+    [SerializeField] private TextMeshPro _timerText;
 
     private void Start()
     {

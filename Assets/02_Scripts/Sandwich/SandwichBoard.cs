@@ -22,9 +22,11 @@ public class SandwichBoard : MonoBehaviour
             return;
         }
 
+        
         ing.transform.DOMove(transform.position + (Vector3.up * 0.4f), 0.12f).OnComplete(() =>
         {
             ing.RigidBody.isKinematic = false;
+            
         });
 
         if (_sandwichParent == null)
@@ -65,7 +67,10 @@ public class SandwichBoard : MonoBehaviour
         }
         GameObject copy = _sandwichParent;
         _sandwichParent = null;
-
+        foreach(Transform t in copy.transform)
+        {
+            t.gameObject.layer = 3;
+        }
         copy.transform.DOMove(target.position, 1f).SetDelay(0.15f).SetEase(Ease.InOutElastic).OnComplete(() =>
         {
             if(success != null)

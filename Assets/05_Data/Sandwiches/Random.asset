@@ -14,5 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _RANDOM: 1
   _name: Special Order
-  _time: 0
-  _ingredients: []
+  _ingredients:
+  - {fileID: 11400000, guid: 824eee682d8c15f4f8911bc315ae4f3a, type: 2}
+  - {fileID: 11400000, guid: ccc68576c3f8df54e8c55dace1adad8f, type: 2}
+  - {fileID: 11400000, guid: ccc68576c3f8df54e8c55dace1adad8f, type: 2}
+  - {fileID: 11400000, guid: ccc68576c3f8df54e8c55dace1adad8f, type: 2}
+  - {fileID: 11400000, guid: 824eee682d8c15f4f8911bc315ae4f3a, type: 2}
