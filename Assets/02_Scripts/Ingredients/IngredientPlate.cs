@@ -41,6 +41,9 @@ public class IngredientPlate : MouseHoverExtension
 
     protected override void MouseStartedHover()
     {
+        if (!_enabled)
+            return;
+
         base.MouseStartedHover();
         Tooltip3D.Instance.ShowIngredientInfo(_ingredient, transform.position);
     }

@@ -37,7 +37,7 @@ public class Tooltip3D : Singleton<Tooltip3D>
     public void HideTooltip()
     {
         _preparingToShow = false;
-
+        _timerToShow = 0;
         _child.SetActive(false);
     }
 }
