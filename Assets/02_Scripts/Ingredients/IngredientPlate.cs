@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IngredientPlate : MonoBehaviour
+public class IngredientPlate : MouseHoverExtension
 {
     [Header("Visuals")]
     [SerializeField] private int _towerSize;
@@ -39,6 +39,17 @@ public class IngredientPlate : MonoBehaviour
             return null;
     }
 
+    protected override void MouseStartedHover()
+    {
+        base.MouseStartedHover();
+        Tooltip3D.Instance.ShowIngredientInfo(_ingredient, transform.position);
+    }
+
+    protected override void MouseStoppedHover()
+    {
+        base.MouseStoppedHover();
+        Tooltip3D.Instance.HideTooltip();
+    }
 
 
 }
