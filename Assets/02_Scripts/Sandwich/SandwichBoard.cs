@@ -21,7 +21,6 @@ public class SandwichBoard : MonoBehaviour
             ing.Drop();
             return;
         }
-
         
         ing.transform.DOMove(transform.position + (Vector3.up * 0.4f), 0.12f).OnComplete(() =>
         {

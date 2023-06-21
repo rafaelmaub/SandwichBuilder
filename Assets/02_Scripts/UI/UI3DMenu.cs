@@ -28,7 +28,12 @@ public class UI3DMenu : MonoBehaviour
         transform.DOMove(_targetPosition, _animDuration).SetEase(_animEase);
         foreach (Graphic scoreText in _highScoreTexts)
         {
-            scoreText.DOFade(1f, 0.45f);
+            scoreText.DOFade(0f, 0f);
+        }
+
+        foreach (Graphic scoreText in _highScoreTexts)
+        {
+            scoreText.DOFade(1f, 1.5f).SetDelay(0.1f);
         }
     }
     public void Hide()
