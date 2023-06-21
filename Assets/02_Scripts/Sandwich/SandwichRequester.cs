@@ -41,7 +41,7 @@ public class SandwichRequester : MonoBehaviour
         if(_running)
         {
 
-            if (GameController.Instance._speedUp)
+            if (GameController.Instance._speedUp) //If speed up mode is on: random timer instantiates new orders
             {
                 foreach (SandwichOrder order in Orders)
                 {
@@ -62,6 +62,7 @@ public class SandwichRequester : MonoBehaviour
 
             }
 
+            //match timer
             _matchTimer += Time.deltaTime;
             OnTimeElapsed.Invoke(_matchTime - _matchTimer);
 
@@ -79,15 +80,19 @@ public class SandwichRequester : MonoBehaviour
         _currentTimerToOrderAgain = 0;
         _timeToNewOrder = Random.Range(10f, 20f);
     }
+
     public void NewRequest()
     {
+        //gets a random sandwich and add to orders
         SandwichOrder order = new SandwichOrder(_sandwichDatabase[Random.Range(0, _sandwichDatabase.Count)], Random.Range(7f, 10f));
         _orders.Add(order);
         OnNewSandwich.Invoke(order);
         
     }
+
     public void StopRequesting()
     {  
+        //stop timer, cancel all orders and show menu again
         _running = false;
         foreach(SandwichOrder order in Orders)
         {
@@ -114,14 +119,15 @@ public class SandwichOrder
 
     public void Finish(bool win)
     {
+        //stop order
         _running = false;
         OnOrderFinished.Invoke(win);
-        //Give Rewards?
     }
     public void EvaluateTime()
     {
         if(_running)
         {
+            //runs timer for order, if out of time cancels order and lost points
             _currentTimer += Time.deltaTime;
             if (_currentTimer >= _time)
             {
@@ -140,7 +146,7 @@ public class SandwichOrder
         _currentTimer = 0;
         _running = true;
 
-        if(sand._RANDOM)
+        if(sand._RANDOM) //sets random ingredients in case it's a randomized sandwich
         {
             _overrideIngredients.AddRange(sand._ingredients);
             for (int i = 0; i < _overrideIngredients.Count; i++)

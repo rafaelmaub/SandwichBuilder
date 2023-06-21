@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class IngredientObject : MonoBehaviour
+public class IngredientObject : MonoBehaviour //handles animation and stores the Ingredient scriptable object data
 {
     [SerializeField] private Ingredient _currentIngredient;
     [SerializeField] private Rigidbody _rigidBody;

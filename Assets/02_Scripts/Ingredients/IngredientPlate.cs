@@ -17,7 +17,7 @@ public class IngredientPlate : MouseHoverExtension
         StartCoroutine(BuildTowerOfIngredients());
     }
 
-    IEnumerator BuildTowerOfIngredients()
+    IEnumerator BuildTowerOfIngredients() //visual effects
     {
         WaitForSecondsRealtime delay = new WaitForSecondsRealtime(1f / _towerSize);
         float yDifference = 0.05f;
@@ -31,7 +31,7 @@ public class IngredientPlate : MouseHoverExtension
         }
     }
 
-    public IngredientObject GetIngredient()
+    public IngredientObject GetIngredient() //gives the raycast an ingredient object to hold
     {
         if(_enabled)
             return Instantiate(IngredientObj, transform.position, IngredientObj.transform.rotation);
@@ -39,6 +39,7 @@ public class IngredientPlate : MouseHoverExtension
             return null;
     }
 
+    //if mouse over collider, calls the tooltip to its position
     protected override void MouseStartedHover()
     {
         if (!_enabled)

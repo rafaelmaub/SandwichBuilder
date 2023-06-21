@@ -14,7 +14,7 @@ public class SandwichBoard : MonoBehaviour
     {
         GameController.Instance.SandwichRequester.OnMatchEnded.AddListener(FinishSandwich);
     }
-    public void PlaceIngredient(IngredientObject ing)
+    public void PlaceIngredient(IngredientObject ing) //puts an ingredient as child object of a "current sandwich" object
     {
         if (_currentSandwich.Count == 0 && ing.Ingredient._type != IngredientType.Bread)
         {
@@ -38,7 +38,7 @@ public class SandwichBoard : MonoBehaviour
         ing.transform.SetParent(_sandwichParent.transform);
         AddIngredient(ing.Ingredient);
     }
-    public void AddIngredient(Ingredient ing)
+    public void AddIngredient(Ingredient ing) //add the ingredient data to the list
     {
         _currentSandwich.Add(ing);
         //Instantiate ingredient above
@@ -48,7 +48,7 @@ public class SandwichBoard : MonoBehaviour
         }
     }
 
-    void FinishSandwich()
+    void FinishSandwich() //sends sandwich to right or wrong position with animation
     {
         //check if its correct or not
         Transform target = _deliveryPoint;

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-namespace DCS.SceneController
+namespace DCS.SceneController //Script made for other projects of my company (Deep Cave Studios)
 {
     public class SceneController : MonoBehaviour
     {

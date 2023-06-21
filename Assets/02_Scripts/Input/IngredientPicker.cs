@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IngredientPicker : MonoBehaviour
+//this scripts handle any form of input and converts into actions in gameplay
+//this structure is useful for multiplayer or two devices playing
+
+public class IngredientPicker : MonoBehaviour 
 {
     [SerializeField] private float _followHeight;
     [SerializeField] private float _minHeight;
@@ -27,25 +30,22 @@ public class IngredientPicker : MonoBehaviour
         }
         
     }
-    public void StartPickIngredient(IngredientPlate plate)
+    public void StartPickIngredient(IngredientPlate plate) //Gets hold of ingredient being hold
     {
         _currentIngredient = plate.GetIngredient();
         if(_currentIngredient)
             _currentIngredient.transform.position += new Vector3(0, _followHeight, 0);
-        //_minHeight = _currentIngredient.transform.position.y;
         
     }
 
-    public void MoveIngredient(Vector3 targetedPosition)
+    public void MoveIngredient(Vector3 targetedPosition) //make ingredient follow mouse by lerping (check Update())
     {
-        //_targetedPosition = targetedPosition;
-        //Debug.Log(targetedPosition);
         _targetedPosition.x = targetedPosition.x;
         _targetedPosition.z = targetedPosition.z;
         _targetedPosition.y = Mathf.Clamp(targetedPosition.y, _minHeight, 2f);
     }
 
-    public void DropIngredient()
+    public void DropIngredient() //basically deletes the ingredient
     {
         if(_currentIngredient)
         {

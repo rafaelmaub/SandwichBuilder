@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerInputReader : MonoBehaviour
+public class PlayerInputReader : MonoBehaviour //just receives input from system and sends to IngredientPicker
 {
     [SerializeField] private PlayerInput _playerInput;
     [SerializeField] private IngredientPicker _picker;
@@ -29,7 +29,6 @@ public class PlayerInputReader : MonoBehaviour
         _aimPos = obj.ReadValue<Vector2>();
         _picker.MoveIngredient(_playerCam.ScreenToWorldPoint(new Vector3(_aimPos.x, _aimPos.y, 3f)));
     }
-
 
     private void DragDrop_canceled(InputAction.CallbackContext obj)
     {

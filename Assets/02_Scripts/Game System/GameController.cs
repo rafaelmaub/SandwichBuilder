@@ -41,7 +41,7 @@ public class GameController : Singleton<GameController>
         TurnColliders(false);
     }
 
-    public void TurnColliders(bool bSet)
+    public void TurnColliders(bool bSet) //raycast purposes
     {
         foreach(IngredientPlate plate in _plates)
         {
@@ -49,11 +49,11 @@ public class GameController : Singleton<GameController>
         }
     }
 
-    public void SpeedUp(bool speed)
+    public void SpeedUp(bool speed) //being called from main  menu, setting difficulty of game
     {
         _speedUp = speed;
     }
-    public SandwichOrder IsSandwichCorrect(List<Ingredient> ingredients)
+    public SandwichOrder IsSandwichCorrect(List<Ingredient> ingredients) //compare list of ingredients of current sandwich and active orders
     {
         foreach(SandwichOrder order in SandwichRequester.Orders)
         {
@@ -81,13 +81,18 @@ public class GameController : Singleton<GameController>
             if(bCorrect)
             {
                 ScoreSystem.ChangeCurrentScore(ScoreSuccess);
+                SoundSystem.Instance.Play_CorrectSandwich();
                 return order;
             }
                 
         }
 
         if(MatchRunning)
+        {
             ScoreSystem.ChangeCurrentScore(ScoreFail);
+            SoundSystem.Instance.Play_WrongSandwich();
+        }
+            
 
         return null;
 

@@ -16,8 +16,11 @@ public class UIScore : MonoBehaviour
     float _currentValue;
     Tween vTween;
 
-    private void Start()
+    private void Start() //check which kind of score should be displaying and subscribe to required events
     {
+        //everytime the score in the system changes, the UI display will change
+        //this way it keeps the code modular and independent of each other
+
         if (_displayType == DisplayType.ShowCurrent)
             GameController.Instance.ScoreSystem.OnCurrentScoreChanged.AddListener(UpdateScoreText);
         else if (_displayType == DisplayType.ShowHighest)
@@ -38,7 +41,7 @@ public class UIScore : MonoBehaviour
 
     }
 
-    void UpdateScoreText(float newValue)
+    void UpdateScoreText(float newValue) //used for increase value animation for current score
     {
         if (newValue == _currentValue)
         {

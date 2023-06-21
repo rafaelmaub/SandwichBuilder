@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//This script allows global access to more important UIs and commands
 public class UIController : Singleton<UIController>
 {
     [SerializeField] private UICountdown _countdown;

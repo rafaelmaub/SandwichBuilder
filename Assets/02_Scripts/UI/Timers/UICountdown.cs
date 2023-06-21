@@ -58,6 +58,7 @@ public class UICountdown : MonoBehaviour
 
     void PopEffectTimerText()
     {
+        _countDownText.DOComplete();
         _countDownText.transform.localScale = Vector3.one;
         _countDownText.transform.DOScale(1.5f, 1f);
         _countDownText.DOFade(1f, 0.5f).OnComplete(() =>
