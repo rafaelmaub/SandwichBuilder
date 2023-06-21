@@ -22,6 +22,15 @@ public class UI3DMenu : MonoBehaviour
         }
 
     }
+    private void OnEnable()
+    {
+        transform.position = _startPosition;
+        transform.DOMove(_targetPosition, _animDuration).SetEase(_animEase);
+        foreach (Graphic scoreText in _highScoreTexts)
+        {
+            scoreText.DOFade(1f, 0.45f);
+        }
+    }
     public void Hide()
     {
         transform.DOKill();

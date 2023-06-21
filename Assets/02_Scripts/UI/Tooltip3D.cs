@@ -28,7 +28,7 @@ public class Tooltip3D : Singleton<Tooltip3D>
         if(_preparingToShow)
         {
             _timerToShow += Time.deltaTime;
-            if(_timerToShow >= 1.5f)
+            if(_timerToShow >= 1.1f)
             {
                 _child.SetActive(true);
             }

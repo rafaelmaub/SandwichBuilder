@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5429248166461675442}
   - component: {fileID: 7903664596901968833}
   - component: {fileID: 1140230189334376028}
+  - component: {fileID: 9033854205768083233}
   m_Layer: 6
   m_Name: FOOD_Plate
   m_TagString: Untagged
@@ -113,6 +114,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _towerSize: 8
   _ingredient: {fileID: 0}
+  _enabled: 0
+--- !u!95 &9033854205768083233
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5406770742710312888}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &9196455632584436311
 GameObject:
   m_ObjectHideFlags: 0
