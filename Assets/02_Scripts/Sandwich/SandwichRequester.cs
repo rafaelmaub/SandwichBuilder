@@ -78,13 +78,13 @@ public class SandwichRequester : MonoBehaviour
     void ResetOrderTimer()
     {
         _currentTimerToOrderAgain = 0;
-        _timeToNewOrder = Random.Range(10f, 20f);
+        _timeToNewOrder = Random.Range(12.5f, 20f);
     }
 
     public void NewRequest()
     {
         //gets a random sandwich and add to orders
-        SandwichOrder order = new SandwichOrder(_sandwichDatabase[Random.Range(0, _sandwichDatabase.Count)], Random.Range(7f, 10f));
+        SandwichOrder order = new SandwichOrder(_sandwichDatabase[Random.Range(0, _sandwichDatabase.Count)], Random.Range(8f, 11.5f));
         _orders.Add(order);
         OnNewSandwich.Invoke(order);
         
