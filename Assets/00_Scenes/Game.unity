@@ -1702,7 +1702,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 82.955}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.842, y: -0.39}
+  m_AnchoredPosition: {x: 0.842, y: -0.324}
   m_SizeDelta: {x: 1.5838, y: 0.4855}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &755678997
@@ -1740,8 +1740,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 00:00
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d3f4da0af698d8f48a801e18a3ed0b4c, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: f68998636231f714fa54172a3342a2d0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 715ede7da9dc0cc469b7c39867a7175c, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 745f00d04f176f844a3e184020362e5e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1765,13 +1765,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 5.15
-  m_fontSizeBase: 5.15
+  m_fontSize: 5.4
+  m_fontSizeBase: 5.4
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1830,7 +1830,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f68998636231f714fa54172a3342a2d0, type: 2}
+  - {fileID: 2100000, guid: 745f00d04f176f844a3e184020362e5e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1910,11 +1910,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: -If you make a mistake and lose the sandwich, you will lose money and this
-    will be deducted on your score
+  m_text: -If you make a mistake and lose the sandwich, you will <b>lose money</b>
+    and this will be deducted on your score
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d3f4da0af698d8f48a801e18a3ed0b4c, type: 2}
-  m_sharedMaterial: {fileID: 5411930947215466634, guid: d3f4da0af698d8f48a801e18a3ed0b4c,
+  m_fontAsset: {fileID: 11400000, guid: 715ede7da9dc0cc469b7c39867a7175c, type: 2}
+  m_sharedMaterial: {fileID: 3167761532967440044, guid: 715ede7da9dc0cc469b7c39867a7175c,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1939,8 +1939,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27.41
-  m_fontSizeBase: 27.41
+  m_fontSize: 31.2
+  m_fontSizeBase: 31.2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2291,8 +2291,8 @@ MonoBehaviour:
   m_text: -<b>Always</b> start your sandwich with bread, you cannot place loose ingredients
     on the cutting board
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d3f4da0af698d8f48a801e18a3ed0b4c, type: 2}
-  m_sharedMaterial: {fileID: 5411930947215466634, guid: d3f4da0af698d8f48a801e18a3ed0b4c,
+  m_fontAsset: {fileID: 11400000, guid: 715ede7da9dc0cc469b7c39867a7175c, type: 2}
+  m_sharedMaterial: {fileID: 3167761532967440044, guid: 715ede7da9dc0cc469b7c39867a7175c,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2317,8 +2317,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27.41
-  m_fontSizeBase: 27.41
+  m_fontSize: 31.2
+  m_fontSizeBase: 31.2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2401,6 +2401,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &971472272 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8991353087786295499, guid: 6e9f5a0725802144c8f27c1e08ff057b,
+    type: 3}
+  m_PrefabInstance: {fileID: 8991353087513149310}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bdb885686b1ea548a02e444e5bf7b57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1008876055 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1030859128798505610, guid: 10edd57366c2e884cad0d07af8f2fe9a,
@@ -2723,8 +2735,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Rules and Tips:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d3f4da0af698d8f48a801e18a3ed0b4c, type: 2}
-  m_sharedMaterial: {fileID: 5411930947215466634, guid: d3f4da0af698d8f48a801e18a3ed0b4c,
+  m_fontAsset: {fileID: 11400000, guid: 715ede7da9dc0cc469b7c39867a7175c, type: 2}
+  m_sharedMaterial: {fileID: 3167761532967440044, guid: 715ede7da9dc0cc469b7c39867a7175c,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2749,8 +2761,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36.28
-  m_fontSizeBase: 36.28
+  m_fontSize: 62.1
+  m_fontSizeBase: 62.1
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3035,11 +3047,16 @@ PrefabInstance:
     - target: {fileID: 2334281209111192693, guid: 8dd6dc7911fc98f4d91c309cce94aa72,
         type: 3}
       propertyPath: OnButtonClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2334281209111192693, guid: 8dd6dc7911fc98f4d91c309cce94aa72,
         type: 3}
       propertyPath: OnButtonClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334281209111192693, guid: 8dd6dc7911fc98f4d91c309cce94aa72,
+        type: 3}
+      propertyPath: OnButtonClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2334281209111192693, guid: 8dd6dc7911fc98f4d91c309cce94aa72,
@@ -3049,7 +3066,17 @@ PrefabInstance:
       objectReference: {fileID: 1909640614}
     - target: {fileID: 2334281209111192693, guid: 8dd6dc7911fc98f4d91c309cce94aa72,
         type: 3}
+      propertyPath: OnButtonClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 971472272}
+    - target: {fileID: 2334281209111192693, guid: 8dd6dc7911fc98f4d91c309cce94aa72,
+        type: 3}
       propertyPath: OnButtonClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334281209111192693, guid: 8dd6dc7911fc98f4d91c309cce94aa72,
+        type: 3}
+      propertyPath: OnButtonClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2334281209111192693, guid: 8dd6dc7911fc98f4d91c309cce94aa72,
@@ -3059,12 +3086,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2334281209111192693, guid: 8dd6dc7911fc98f4d91c309cce94aa72,
         type: 3}
+      propertyPath: OnButtonClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: FinishSandwich
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334281209111192693, guid: 8dd6dc7911fc98f4d91c309cce94aa72,
+        type: 3}
       propertyPath: OnButtonClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: GameController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2334281209111192693, guid: 8dd6dc7911fc98f4d91c309cce94aa72,
         type: 3}
+      propertyPath: OnButtonClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SandwichBoard, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334281209111192693, guid: 8dd6dc7911fc98f4d91c309cce94aa72,
+        type: 3}
       propertyPath: OnButtonClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334281209111192693, guid: 8dd6dc7911fc98f4d91c309cce94aa72,
+        type: 3}
+      propertyPath: OnButtonClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8103355225343354299, guid: 8dd6dc7911fc98f4d91c309cce94aa72,
@@ -3187,10 +3229,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: -To finish and deliver a sandwich, place one final bread slice on top
+  m_text: -To finish and deliver a sandwich,<b> place one final bread slice on top</b>
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d3f4da0af698d8f48a801e18a3ed0b4c, type: 2}
-  m_sharedMaterial: {fileID: 5411930947215466634, guid: d3f4da0af698d8f48a801e18a3ed0b4c,
+  m_fontAsset: {fileID: 11400000, guid: 715ede7da9dc0cc469b7c39867a7175c, type: 2}
+  m_sharedMaterial: {fileID: 3167761532967440044, guid: 715ede7da9dc0cc469b7c39867a7175c,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3215,8 +3257,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27.41
-  m_fontSizeBase: 27.41
+  m_fontSize: 31.2
+  m_fontSizeBase: 31.2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4465,10 +4507,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: -Drag and drop the ingredients on the table to the cutting board
+  m_text: -<b>Drag and drop</b> the ingredients on the table to the cutting board
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d3f4da0af698d8f48a801e18a3ed0b4c, type: 2}
-  m_sharedMaterial: {fileID: 5411930947215466634, guid: d3f4da0af698d8f48a801e18a3ed0b4c,
+  m_fontAsset: {fileID: 11400000, guid: 715ede7da9dc0cc469b7c39867a7175c, type: 2}
+  m_sharedMaterial: {fileID: 3167761532967440044, guid: 715ede7da9dc0cc469b7c39867a7175c,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4493,8 +4535,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27.41
-  m_fontSizeBase: 27.41
+  m_fontSize: 31.2
+  m_fontSizeBase: 31.2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

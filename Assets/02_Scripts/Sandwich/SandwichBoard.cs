@@ -48,7 +48,7 @@ public class SandwichBoard : MonoBehaviour
         }
     }
 
-    void FinishSandwich() //sends sandwich to right or wrong position with animation
+    public void FinishSandwich() //sends sandwich to right or wrong position with animation
     {
         //check if its correct or not
         Transform target = _deliveryPoint;

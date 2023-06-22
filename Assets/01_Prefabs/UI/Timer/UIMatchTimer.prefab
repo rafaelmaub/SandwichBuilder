@@ -68,8 +68,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0:00
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d3f4da0af698d8f48a801e18a3ed0b4c, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: f68998636231f714fa54172a3342a2d0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 715ede7da9dc0cc469b7c39867a7175c, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 745f00d04f176f844a3e184020362e5e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1efa062b279696041b89553275b5d631, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timerText: {fileID: 2766760304628191456}
+  _timerText: {fileID: 0}
 --- !u!1001 &4456452186246001127
 PrefabInstance:
   m_ObjectHideFlags: 0
